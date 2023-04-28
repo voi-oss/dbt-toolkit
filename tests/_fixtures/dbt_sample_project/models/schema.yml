@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Description of the sources
+    tables:
+      - name: city
+        description: Description of the city source.
+
+        columns:
+          - name: id
+            description: Primary key of the city table in the source.
+
+          - name: name
+            description: Name column of the city table in the source.
+
+      - name: user
+        description: Description of the user source.
+
+        columns:
+          - name: id
+            description: Primary key of the user table in the source.
+
+          - name: name
+            description: Name column of the user table in the source.
+
+          - name: height
+            description: Height (in cm)
+
+models:
+  - name: stg_city
+    description: Description of the stg_city model
+    columns:
+      - name: id
+      - name: name
+
+  - name: stg_user
+    description: Description of the stg_user model
+    columns:
+      - name: id
+      - name: name
+      - name: height_cm
+        meta:
+          original_name: height
+
+  - name: mart_user
+    columns:
+      - name: name
+      - name: height_cm

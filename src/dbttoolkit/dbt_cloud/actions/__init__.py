@@ -1,0 +1,8 @@
+import typer
+
+from dbttoolkit.dbt_cloud.actions.retrieve_artifacts_time_interval import typer_app as artifacts_time_interval_typer_app
+from dbttoolkit.dbt_cloud.actions.retrieve_most_recent_artifact import typer_app as most_recent_artifact_typer_app
+
+dbt_cloud_typer_app = typer.Typer()
+dbt_cloud_typer_app.registered_commands.append(*artifacts_time_interval_typer_app.registered_commands)
+dbt_cloud_typer_app.registered_commands.append(*most_recent_artifact_typer_app.registered_commands)

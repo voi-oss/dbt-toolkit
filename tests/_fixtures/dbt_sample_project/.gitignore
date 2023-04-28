@@ -1,0 +1,6 @@
+target/*
+!target/manifest_original.json
+!target/catalog.json
+
+dbt_modules/
+logs/

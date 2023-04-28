@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "dbt_schema_version": "https://schemas.getdbt.com/dbt/catalog/v1.json",
+    "dbt_version": "0.21.0",
+    "generated_at": "2022-01-31T16:06:47.212917Z",
+    "invocation_id": "16bc053d-0df9-441e-a53f-346de08a94a1",
+    "env": {}
+  },
+  "nodes": {
+    "model.dbt_sample_project.mart_user": {
+      "metadata": {
+        "type": "VIEW",
+        "schema": "dev",
+        "name": "mart_user",
+        "database": "dbt_sample_project",
+        "comment": null,
+        "owner": "postgres"
+      },
+      "columns": {
+        "id": {
+          "type": "character varying",
+          "index": 1,
+          "name": "id",
+          "comment": null
+        },
+        "name": {
+          "type": "character varying",
+          "index": 2,
+          "name": "name",
+          "comment": null
+        },
+        "height_cm": {
+          "type": "integer",
+          "index": 3,
+          "name": "height_cm",
+          "comment": null
+        },
+        "date_of_birth": {
+          "type": "date",
+          "index": 4,
+          "name": "date_of_birth",
+          "comment": null
+        },
+        "city_id": {
+          "type": "character varying",
+          "index": 5,
+          "name": "city_id",
+          "comment": null
+        }
+      },
+      "stats": {
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": false,
+          "include": false,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.dbt_sample_project.mart_user"
+    },
+    "model.dbt_sample_project.mart_user_and_city": {
+      "metadata": {
+        "type": "VIEW",
+        "schema": "dev",
+        "name": "mart_user_and_city",
+        "database": "dbt_sample_project",
+        "comment": null,
+        "owner": "postgres"
+      },
+      "columns": {
+        "user_id": {
+          "type": "character varying",
+          "index": 1,
+          "name": "user_id",
+          "comment": null
+        },
+        "name": {
+          "type": "character varying",
+          "index": 2,
+          "name": "name",
+          "comment": null
+        },
+        "city_id": {
+          "type": "character varying",
+          "index": 3,
+          "name": "city_id",
+          "comment": null
+        }
+      },
+      "stats": {
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": false,
+          "include": false,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.dbt_sample_project.mart_user_and_city"
+    },
+    "model.dbt_sample_project.stg_city": {
+      "metadata": {
+        "type": "VIEW",
+        "schema": "dev",
+        "name": "stg_city",
+        "database": "dbt_sample_project",
+        "comment": null,
+        "owner": "postgres"
+      },
+      "columns": {
+        "id": {
+          "type": "character varying",
+          "index": 1,
+          "name": "id",
+          "comment": null
+        },
+        "name": {
+          "type": "character varying",
+          "index": 2,
+          "name": "name",
+          "comment": null
+        },
+        "population": {
+          "type": "integer",
+          "index": 3,
+          "name": "population",
+          "comment": null
+        }
+      },
+      "stats": {
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": false,
+          "include": false,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.dbt_sample_project.stg_city"
+    },
+    "model.dbt_sample_project.stg_user": {
+      "metadata": {
+        "type": "VIEW",
+        "schema": "dev",
+        "name": "stg_user",
+        "database": "dbt_sample_project",
+        "comment": null,
+        "owner": "postgres"
+      },
+      "columns": {
+        "id": {
+          "type": "character varying",
+          "index": 1,
+          "name": "id",
+          "comment": null
+        },
+        "name": {
+          "type": "character varying",
+          "index": 2,
+          "name": "name",
+          "comment": null
+        },
+        "height_cm": {
+          "type": "integer",
+          "index": 3,
+          "name": "height_cm",
+          "comment": null
+        },
+        "date_of_birth": {
+          "type": "date",
+          "index": 4,
+          "name": "date_of_birth",
+          "comment": null
+        },
+        "city_id": {
+          "type": "character varying",
+          "index": 5,
+          "name": "city_id",
+          "comment": null
+        }
+      },
+      "stats": {
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": false,
+          "include": false,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.dbt_sample_project.stg_user"
+    }
+  },
+  "sources": {
+    "source.dbt_sample_project.raw.city": {
+      "metadata": {
+        "type": "BASE TABLE",
+        "schema": "raw",
+        "name": "city",
+        "database": "dbt_sample_project",
+        "comment": null,
+        "owner": "postgres"
+      },
+      "columns": {
+        "id": {
+          "type": "character varying",
+          "index": 1,
+          "name": "id",
+          "comment": null
+        },
+        "name": {
+          "type": "character varying",
+          "index": 2,
+          "name": "name",
+          "comment": null
+        },
+        "population": {
+          "type": "integer",
+          "index": 3,
+          "name": "population",
+          "comment": null
+        }
+      },
+      "stats": {
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": false,
+          "include": false,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "source.dbt_sample_project.raw.city"
+    },
+    "source.dbt_sample_project.raw.user": {
+      "metadata": {
+        "type": "BASE TABLE",
+        "schema": "raw",
+        "name": "user",
+        "database": "dbt_sample_project",
+        "comment": null,
+        "owner": "postgres"
+      },
+      "columns": {
+        "id": {
+          "type": "character varying",
+          "index": 1,
+          "name": "id",
+          "comment": null
+        },
+        "name": {
+          "type": "character varying",
+          "index": 2,
+          "name": "name",
+          "comment": null
+        },
+        "height_cm": {
+          "type": "integer",
+          "index": 3,
+          "name": "height_cm",
+          "comment": null
+        },
+        "date_of_birth": {
+          "type": "date",
+          "index": 4,
+          "name": "date_of_birth",
+          "comment": null
+        },
+        "city_id": {
+          "type": "character varying",
+          "index": 5,
+          "name": "city_id",
+          "comment": null
+        }
+      },
+      "stats": {
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": false,
+          "include": false,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "source.dbt_sample_project.raw.user"
+    }
+  },
+  "errors": null
+}
