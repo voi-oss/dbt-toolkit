@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.8.x'
 
@@ -22,13 +22,13 @@ jobs:
         run: pip3 install pipenv
 
       - name: Cache Python packages
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.local/share/virtualenvs/
           key: ${{ runner.os }}-python-${{ hashFiles('**/Pipfile.lock') }}
 
       - name: Install Python dependencies
-        run: pipenv install --dev  --deploy
+        run: pipenv install --dev --deploy
 
       - name: Install this package
         run: pipenv run pip3 install .
