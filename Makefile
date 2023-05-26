@@ -4,6 +4,14 @@ IMAGE=$(REGISTRY)/$(APP_NAME)
 SHORT_SHA?=$(shell git rev-parse --short HEAD)
 VERSION?=$(SHORT_SHA)
 
+.PHONY: build
+build: clean-build
+	python3 setup.py sdist bdist_wheel
+
+.PHONY: clean-build
+clean-build:
+	rm -rf build dist
+
 .PHONY: install-dev
 install-dev:
 	@echo "Installing it locally with editable mode"
