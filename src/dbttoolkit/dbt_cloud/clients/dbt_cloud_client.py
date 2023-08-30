@@ -1,7 +1,8 @@
-import requests
 from dataclasses import dataclass
 from datetime import datetime
 from typing import ClassVar, Dict, Iterable, List, Mapping, Optional
+
+import requests
 
 from dbttoolkit.utils.logger import get_logger
 

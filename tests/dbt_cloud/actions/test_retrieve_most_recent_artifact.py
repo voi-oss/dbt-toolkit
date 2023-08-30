@@ -59,6 +59,16 @@ def rest_api_run_result(job_id, dbt_cloud_ids):
         "id": 2,
         "is_complete": True,
         "is_success": False,
+        "is_cancelled": False,
+        "created_at": "2022-06-10 11:30:00.321339+00:00",
+        **common,
+    }
+
+    cancelled = {
+        "id": 3,
+        "is_complete": True,
+        "is_success": False,
+        "is_cancelled": True,
         "created_at": "2022-06-10 11:30:00.321339+00:00",
         **common,
     }
@@ -67,11 +77,12 @@ def rest_api_run_result(job_id, dbt_cloud_ids):
         "id": 1,
         "is_complete": True,
         "is_success": True,
+        "is_cancelled": False,
         "created_at": "2022-06-09 11:30:00.321339+00:00",
         **common,
     }
 
-    return {"data": [failure, success]}
+    return {"data": [failure, cancelled, success]}
 
 
 @fixture
