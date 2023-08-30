@@ -144,6 +144,7 @@ class DbtCloudClient:
             run
             for run in runs
             if run["is_complete"]
+            and not run["is_cancelled"]
             and run["project_id"] == self.project_id
             and run["environment_id"] == self.environment_id
         ]
