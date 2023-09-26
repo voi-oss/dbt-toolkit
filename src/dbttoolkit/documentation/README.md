@@ -9,9 +9,9 @@ Propagates dbt documentation for columns that are documented and have the same n
 Example:
 
 <p align="center">
-    <a href="https://github.com/voiapp/data-pipelines/blob/master/automation/dbt-toolkit/docs/propagation_simple.png">
+    <a href="https://github.com/voi-oss/dbt-toolkit/blob/main/docs/propagation_simple.png">
         <img 
-          src="https://github.com/voiapp/data-pipelines/blob/master/automation/dbt-toolkit/docs/propagation_simple.png?raw=true" 
+          src="https://github.com/voi-oss/dbt-toolkit/blob/main/docs/propagation_simple.png?raw=true" 
           alt="Propagation example"
           width="600px"
         />
@@ -55,7 +55,7 @@ inherited.
 ### Features roadmap
 
 * Propagation from ephemeral models to models and between macros has not been tested yet
-* Check if it works for columns documented in the source that do not exist in the warehouse (i.e. if we go with a
+* Check if it works for columns documented in the source that does not exist in the warehouse (i.e. if we go with a
   raw `json` strategy)
 * What happens if 3 upstream columns have the same documentation. Are we repeating all 3?
 * Write a test for capturing the behavior of multiple inheritance on different levels:
@@ -75,5 +75,5 @@ The following dbt artifacts are used as input:
 * `manifest.json` to get the existing project documentation
 
 They are parsed and all columns are combined on a data structure, which is recursively traversed to identify the columns
-with the same name that are part of the same dependency graph. The propagated column documentation are then written back
+with the same name that are part of the same dependency graph. The propagated column documentation is then written back
 to the `manifest.json`.
