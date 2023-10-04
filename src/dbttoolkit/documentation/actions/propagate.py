@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Mapping, Optional
 
 import typer
+from rich import print
 
 from dbttoolkit.documentation.models.column import Column, ColumnRegistry
 from dbttoolkit.documentation.presentation.formatters import format_upstream_descriptions_to_human_readable
@@ -96,13 +97,13 @@ def propagate_documentation_in_the_manifest(registry: ColumnRegistry, manifest: 
             continue
 
         if column.name in IGNORED_COLUMNS:
-            logger.info(f"Ignoring column {column.name} in {column.node_id}")
+            print(f"Ignoring column {column.name} in {column.node_id}")
             continue
 
         node_in_manifest = manifest["nodes"][column.node_id]
 
-        logger.info(f"[bold red]MISSING[/]: Column [bold]{column.node_id} → {column.name}[/] missing documentation")
-        logger.info(
+        print(f"[bold red]MISSING[/]: Column [bold]{column.node_id} → {column.name}[/] missing documentation")
+        print(
             "  => 🔎 [bold green]FOUND[/]: Found {} candidate: {}\n".format(
                 len(column.descriptions_from_upstream.keys()), list(column.descriptions_from_upstream.keys())
             )
