@@ -12,7 +12,7 @@ google-cloud-storage = "~= 2.4.0"
 rich = "~= 13.3"
 
 [dev-packages]
-mypy = "~= 1.5"
+mypy = "~= 0.991"
 black = "== 22.6.0"
 flake8 = "~= 4.0.1"
 pytest = "~= 7.1.2"
