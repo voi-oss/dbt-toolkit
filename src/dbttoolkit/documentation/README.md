@@ -2,6 +2,8 @@
 
 Propagates dbt documentation for columns that are documented and have the same name in downstream dependencies.
 
+> This project is in an ALPHA stage. Internal and external APIs might change between minor versions. This module has only been tested against Snowflake.
+
 > Example: A dbt model `user` has a column called `name`, which is documented. Another dbt model `user_stats`
 > depends on `user` and also has a column called `name`, which is not documented. This automation will
 > propagate (i.e., "pass along") the documentation from `user.name` to `user_stats.name`.
