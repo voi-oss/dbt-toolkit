@@ -30,11 +30,19 @@ More information can be found on the package's [README](src/dbttoolkit/dbt_cloud
 
 ## Installation
 
-This project requires Python 3.8+. You can install the latest version of this package from PyPI by running the 
+This project requires Python 3.8+. You can install the latest version of this package from PyPI by running the
 command below.
 
 ```shell
 $ pip install dbt-toolkit
+
+```
+
+Including dbt-cloud and google cloud bucket support
+
+```shell
+$ pip install dbt-toolkit[cloud-support]
+
 ```
 
 ## Development
