@@ -8,7 +8,6 @@ from dbttoolkit.utils.logger import get_logger
 
 logger = get_logger()
 
-LARGE_PAGE_SIZE = 2000
 STANDARD_PAGE_SIZE = 100
 
 
@@ -35,8 +34,7 @@ class DbtCloudClient:
         """
         logger.info(f"Retrieving all production runs (between {start_time} and {end_time})")
 
-        # As of 2021-08, a page size of 2000 will give us around 1 month worth of runs
-        completed_runs = self.retrieve_completed_runs(page_size=LARGE_PAGE_SIZE, created_after=start_time)
+        completed_runs = self.retrieve_completed_runs(created_after=start_time)
         runs = [
             run
             for run in completed_runs
