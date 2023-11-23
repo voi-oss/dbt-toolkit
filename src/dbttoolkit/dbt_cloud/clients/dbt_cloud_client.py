@@ -97,7 +97,6 @@ class DbtCloudClient:
         response.raise_for_status()
         return response.json()
 
-
     def retrieve_completed_runs(
         self, *, page_size: int = STANDARD_PAGE_SIZE, created_after: datetime = None
     ) -> List[Dict]:
