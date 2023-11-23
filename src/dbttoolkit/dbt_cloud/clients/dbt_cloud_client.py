@@ -89,19 +89,14 @@ class DbtCloudClient:
         if step:
             params = {"step": step}
 
-        try:
-            response = requests.get(
-                self.BASE_URL + f"/accounts/{self.account_id}/runs/{run_id}/artifacts/{artifact_name}.json",
-                params=params,
-                headers=self._default_headers(),
-            )
-            response.raise_for_status()
-            return response.json()
+        response = requests.get(
+            self.BASE_URL + f"/accounts/{self.account_id}/runs/{run_id}/artifacts/{artifact_name}.json",
+            params=params,
+            headers=self._default_headers(),
+        )
+        response.raise_for_status()
+        return response.json()
 
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Error making API request: {e}")
-            # Handle the error or re-raise it if necessary
-            raise
 
     def retrieve_completed_runs(
         self, *, page_size: int = STANDARD_PAGE_SIZE, created_after: datetime = None
@@ -125,15 +120,10 @@ class DbtCloudClient:
                 "include_related": '["job", "environment", "trigger"]',
             }
 
-            try:
-                response = requests.get(
-                    self.BASE_URL + f"/accounts/{self.account_id}/runs", params=params, headers=self._default_headers()
-                )
-                response.raise_for_status()
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Error making API request: {e}")
-                # Handle the error or re-raise it if necessary
-                raise
+            response = requests.get(
+                self.BASE_URL + f"/accounts/{self.account_id}/runs", params=params, headers=self._default_headers()
+            )
+            response.raise_for_status()
 
             data = response.json()["data"]
             runs += data
