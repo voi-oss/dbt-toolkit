@@ -14,11 +14,11 @@ from dbttoolkit.documentation.presentation.formatters import (
     [
         (
             "model.project.model_path.model_name",
-            "[model.project.model_path.model_name](/#!/model/model.project.model_path.model_name)",
+            "[model.project.model_path.model_name](#!/model/model.project.model_path.model_name)",
         ),
         (
             "source.project.source_path.source_name",
-            "[source.project.source_path.source_name](/#!/source/source.project.source_path.source_name)",
+            "[source.project.source_path.source_name](#!/source/source.project.source_path.source_name)",
         ),
     ],
     ids=["model", "source"],

@@ -35,10 +35,14 @@ setup(
     python_requires=">=3.8, <4",
     setup_requires=["wheel", "setuptools_scm"],
     install_requires=[
-        "requests ~= 2.28.0",
-        "typer ~= 0.4.2",
-        "google-cloud-storage ~= 2.4.0",
-        "pydantic ~= 1.9.1",
-        "rich ~= 13.3.5",
+        "typer ~= 0.4",
+        "pydantic ~= 1.9",
+        "rich ~= 13.3",
     ],
+    extras_require={
+        "cloud-support": [
+            "google-cloud-storage ~= 2.4",
+            "requests ~= 2.28",
+        ]
+    },
 )

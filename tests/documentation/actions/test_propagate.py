@@ -25,7 +25,7 @@ def test_propagation_1_level(transformed_artifact: Mapping):
     assert (
         description == "Name column of the user table in the source. "
         "[propagated from [source.dbt_sample_project.raw.user]"
-        "(/#!/source/source.dbt_sample_project.raw.user)]"
+        "(#!/source/source.dbt_sample_project.raw.user)]"
     )
 
 
@@ -39,7 +39,7 @@ def test_propagation_2_level(transformed_artifact: Mapping):
     assert (
         description == "Name column of the user table in the source. "
         "[propagated from [source.dbt_sample_project.raw.user]"
-        "(/#!/source/source.dbt_sample_project.raw.user)]"
+        "(#!/source/source.dbt_sample_project.raw.user)]"
     )
 
 
@@ -63,7 +63,7 @@ def test_alias(transformed_artifact: Mapping):
     assert (
         propagated_description
         == original_description
-        + " [propagated from [source.dbt_sample_project.raw.user](/#!/source/source.dbt_sample_project.raw.user)]"
+        + " [propagated from [source.dbt_sample_project.raw.user](#!/source/source.dbt_sample_project.raw.user)]"
     )
 
 
@@ -77,11 +77,11 @@ def test_2_parents(transformed_artifact: Mapping):
     expected = (
         "Name column of the city table in the source. "
         "[propagated from [source.dbt_sample_project.raw.city]"
-        "(/#!/source/source.dbt_sample_project.raw.city)]"
+        "(#!/source/source.dbt_sample_project.raw.city)]"
         "\n\n"
         "Name column of the user table in the source. "
         "[propagated from [source.dbt_sample_project.raw.user]"
-        "(/#!/source/source.dbt_sample_project.raw.user)]"
+        "(#!/source/source.dbt_sample_project.raw.user)]"
     )
 
     assert description == expected

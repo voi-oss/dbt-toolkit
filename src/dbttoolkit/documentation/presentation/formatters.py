@@ -9,7 +9,7 @@ def format_node_link_in_markdown(node_id: str) -> str:
     """
     node_type = node_id.split(".")[0]
 
-    return f"[{node_id}](/#!/{node_type}/{node_id})"
+    return f"[{node_id}](#!/{node_type}/{node_id})"
 
 
 def format_upstream_descriptions_to_human_readable(descriptions_from_upstream: ColumnDescriptionWithSource) -> str:
